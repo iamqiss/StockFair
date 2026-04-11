@@ -1,4 +1,4 @@
-# StockFair 🤝💛
+# StockFair
 
 > **The stokvel app built for the people who built the stokvel.**  
 > Transparent. Trustworthy. Proudly South African.
@@ -17,40 +17,40 @@ Built for the mamas. Built for the circles. Built for South Africa.
 
 ## Features
 
-### 🏠 Home Dashboard
+### Home Dashboard
 - Live total savings across all your stokvels
 - Balance, group count, and next payout at a glance
 - Quick-access Deposit & Withdraw
 - Stokvel cards with real-time contribution progress and overdue alerts
 
-### 👥 Groups
+### Groups
 - Manage multiple stokvels — Grocery, Rotating, Burial Society, Investment
 - Per-group progress bars showing collection towards payout
 - Member contribution tracking (Paid / Pending / Overdue)
 - Group Pot with target and payout date
 - Rules, History, and Group Cart tabs per stokvel
 
-### 🛒 Market
+### Market
 - Bulk grocery deals from Shoprite, Pick n Pay, Checkers, and Spar
 - Category filters: Staples, Oils, Canned Goods, Cleaning, and more
 - Pre-order with minimum quantity thresholds
 - Retailer discount badges on every product
 
-### 💬 Messages & Chat
+### Messages & Chat
 - Group chat per stokvel
 - Voice note support (critical for accessibility)
 - **Inline Pre-order Vote cards** — propose a bulk order, vote directly in chat
   - Item breakdown, total cost, votes needed, live progress
   - Vote Yes / No without leaving the conversation
 
-### 🔍 Discover
+### Discover
 - Location-based stokvel discovery (Johannesburg, GP · 10km radius)
 - Featured stokvels with Fair Score ratings
 - Filter by: For You, Top Performers, Safest
 - Join or Request to Join open groups
 - Stokvel types: Rotation, Investment, Grocery Co-op
 
-### 📊 Fair Score
+### Fair Score
 - Transparent trustworthiness rating (300–850 range)
 - Calculated from: Payment History (40%), Consistency (25%), Group Activity (20%), Member Tenure (15%)
 - Score tiers: Building → Fair → Good → Very Good → Excellent
@@ -58,28 +58,28 @@ Built for the mamas. Built for the circles. Built for South Africa.
 - Platform comparison — see how you rank among all StockFair members
 - Quick actions to boost your score
 
-### 📈 Investment Portfolio
+### Investment Portfolio
 - Investment stokvels with Money Market Fund allocation
 - Performance timeline vs bank returns
 - Net returns, average rate p.a.
 - **SARS Tax Report** — estimated interest, tax-free exemption status
 - Full portfolio allocation donut chart
 
-### 👛 Wallet
+### Wallet
 - Balance, money in/out summary
 - Send, Request, Deposit, Withdraw
 - Auto-Pay contributions setup
 - Transaction history filtered by: This Week / This Month / All Time
 - Category filters: All, Contributions, Payouts, Transfers
 
-### 🔔 Notifications
+### Notifications
 - Contribution due reminders
 - Payout processed alerts
 - New bulk deal alerts from retail partners
 - New member joins
 - Payment confirmations
 
-### 🔒 Security
+### Security
 **Feature Lock**
 - PIN protection per action: Withdraw Funds, Stokvel Payments, View Statements, Linked Accounts, Investment Actions
 
@@ -90,7 +90,7 @@ Built for the mamas. Built for the circles. Built for South Africa.
 - Geofencing & Velocity Checks — flags physically impossible transaction locations
 - Full data transparency on every feature
 
-### 🌍 Language Support
+### Language Support
 StockFair is built to meet members where they are — in their language.
 - **English** (default)
 - **Tsonga** (Xitsonga) — first-class support, culturally reviewed
@@ -98,7 +98,7 @@ StockFair is built to meet members where they are — in their language.
 - **Zulu** (isiZulu)
 - More languages coming
 
-### 🎨 Themes
+### Themes
 Three complete themes, each with light and dark modes:
 - **Obsidian** — monochrome, clean, minimal
 - **Forge** — amber gold, warm, community-rooted
