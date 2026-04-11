@@ -1,0 +1,31 @@
+uploads = []
+
+[[generated]]
+id = "kSwpsqXYc1rnkBS5o3jJb"
+uri = "file://artifacts/stockfair/assets/images/icon.png"
+type = "image"
+title = "stockfair app icon"
+
+[[generated]]
+id = "K3e_qeCq4AZWLyl76LyrS"
+uri = "file://artifacts/stockfair/assets/images/marketplace_hero.png"
+type = "image"
+title = "marketplace hero image"
+
+[[generated]]
+id = "n2nqt9AmIHq4X3AdTFdMP"
+uri = "file://artifacts/stockfair/assets/images/community_hero.png"
+type = "image"
+title = "community hero"
+
+[[generated]]
+id = "S4nDTvhWz9nhqFqtyiVb7"
+uri = "file://artifacts/stockfair/assets/images/grocery_hero.png"
+type = "image"
+title = "SA grocery hero"
+
+[[outputs]]
+id = "K3VDgRSDKPZd6Y-yxmy8j"
+uri = "file://artifacts/stockfair/assets/images/grocery_hero.png"
+type = "image"
+title = "AI-Generated SA Grocery Hero Image"
