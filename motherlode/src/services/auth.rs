@@ -24,6 +24,7 @@
 //! SIGN OUT:
 //!   POST /auth/signout → blacklist refresh token jti
 
+use chrono::Datelike;
 use chrono::{Duration, Utc};
 use redis::aio::ConnectionManager;
 use sqlx::PgPool;
@@ -761,7 +762,7 @@ fn validate_date_of_birth(dob: &str) -> AppResult<()> {
         return Err(AppError::BadRequest("Invalid month in date of birth".to_string()));
     }
 
-    let current_year = Utc::now().year() as u32;
+    let current_year = Utc::now().year_ce().1;
     if year < 1900 || year > current_year - 18 {
         return Err(AppError::BadRequest(
             "You must be at least 18 years old to use StockFair".to_string(),
