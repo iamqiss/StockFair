@@ -43,7 +43,7 @@ async fn main() -> anyhow::Result<()> {
     };
 
     let app = Router::new()
-        .merge(routes::auth::router())
+        .merge(routes::auth::router(state.clone()))
         .merge(routes::users::router())
         .merge(routes::stokvels::router())
         .merge(routes::contributions::router())
