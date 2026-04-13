@@ -643,16 +643,16 @@ pub async fn sign_out(
     refresh_token: &str,
     config: &Config,
 ) -> AppResult<MessageResponse> {
-    // Validate token to get jti (even if expired, we still want to blacklist)
-    let claims = validate_refresh_token(refresh_token, &config.jwt_secret)
-        .or_else(|_| {
-            jwt::decode_access_token_unverified(refresh_token, &config.jwt_secret)
-                .map(|_| {
-                    // If it's an access token mistakenly sent, just ignore
-                    return Err(AppError::BadRequest("Invalid token type".to_string()));
-                })
-                .map_err(|_| AppError::Unauthorized)
-        })?;
+    // Validate refresh token to extract jti
+    // If invalid we still return success — idempotent sign out
+    let claims = match validate_refresh_token(refresh_token, &config.jwt_secret) {
+        Ok(c) => c,
+        Err(_) => {
+            return Ok(MessageResponse {
+                message: "Signed out successfully".to_string(),
+            });
+        }
+    };
 
     let ttl = (claims.exp - Utc::now().timestamp()).max(0) as u64;
     blacklist_refresh_jti(redis, claims.jti, ttl).await.ok();
