@@ -12,6 +12,7 @@ use axum::{
     http::{HeaderMap, StatusCode},
     response::IntoResponse,
 };
+use sqlx::types::ipnetwork::IpNetwork;
 use serde_json::json;
 use validator::Validate;
 
@@ -219,7 +220,7 @@ pub async fn sign_in(
         &mut redis,
         payload,
         device_id.as_deref(),
-        ip_address.as_deref(),
+        ip_address.as_ref().and_then(|s| s.parse().ok()),
         user_agent.as_deref(),
         &state.config,
     )
