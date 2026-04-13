@@ -27,7 +27,7 @@ pub mod webhooks;
 
 #[derive(Clone)]
 pub struct AppState {
-    pub db: DatabaseConnection,
+    pub db: sqlx::PgPool,
     pub redis: ConnectionManager,
     pub config: Config,
     pub payment_provider: Arc<dyn PaymentProvider>,
