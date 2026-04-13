@@ -1,8 +1,8 @@
 use sea_orm::{Database, DatabaseConnection};
 use redis::{Client, aio::ConnectionManager};
 
-pub async fn connect(url: &str) -> anyhow::Result<DatabaseConnection> {
-    Ok(Database::connect(url).await?)
+pub async fn connect(url: &str) -> anyhow::Result<sqlx::PgPool> {
+    Ok(sqlx::PgPool::connect(url).await?)
 }
 
 pub async fn connect_redis(url: &str) -> anyhow::Result<ConnectionManager> {
