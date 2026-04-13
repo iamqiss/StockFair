@@ -12,6 +12,7 @@ use axum::{
     http::{HeaderMap, StatusCode},
     response::IntoResponse,
 };
+use sqlx::types::ipnetwork::IpNetwork;
 use serde_json::json;
 use validator::Validate;
 

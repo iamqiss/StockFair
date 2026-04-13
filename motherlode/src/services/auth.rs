@@ -28,6 +28,7 @@ use chrono::Datelike;
 use chrono::{Duration, Utc};
 use redis::aio::ConnectionManager;
 use sqlx::PgPool;
+use sqlx::types::ipnetwork::IpNetwork;
 use uuid::Uuid;
 
 use crate::{
@@ -446,7 +447,7 @@ pub async fn sign_in(
     redis: &mut ConnectionManager,
     payload: SignInRequest,
     device_id: Option<&str>,
-    ip_address: Option<&str>,
+    ip_address: Option<IpNetwork>,
     user_agent: Option<&str>,
     config: &Config,
 ) -> AppResult<AuthResponse> {

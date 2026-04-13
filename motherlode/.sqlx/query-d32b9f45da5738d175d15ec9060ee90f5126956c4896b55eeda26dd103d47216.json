@@ -1,0 +1,14 @@
+{
+  "db_name": "PostgreSQL",
+  "query": "\n        INSERT INTO fair_scores (\n            user_id, score,\n            payment_history, consistency, group_activity, member_tenure,\n            updated_at\n        )\n        VALUES ($1, 380, 0, 0, 0, 0, NOW())\n        ",
+  "describe": {
+    "columns": [],
+    "parameters": {
+      "Left": [
+        "Uuid"
+      ]
+    },
+    "nullable": []
+  },
+  "hash": "d32b9f45da5738d175d15ec9060ee90f5126956c4896b55eeda26dd103d47216"
+}

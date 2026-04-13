@@ -1,0 +1,14 @@
+{
+  "db_name": "PostgreSQL",
+  "query": "\n        INSERT INTO user_wallets (user_id, balance, updated_at)\n        VALUES ($1, 0.00, NOW())\n        ",
+  "describe": {
+    "columns": [],
+    "parameters": {
+      "Left": [
+        "Uuid"
+      ]
+    },
+    "nullable": []
+  },
+  "hash": "8989b50ea7cf2aa197993e72c074630cd249791944ed1cdb28e3e928f24d502f"
+}

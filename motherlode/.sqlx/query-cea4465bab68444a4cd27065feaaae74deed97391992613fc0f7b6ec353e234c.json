@@ -1,0 +1,14 @@
+{
+  "db_name": "PostgreSQL",
+  "query": "\n        INSERT INTO feature_lock_settings (\n            user_id,\n            lock_withdrawals, lock_payments,\n            lock_statements, lock_linked_accounts, lock_investments,\n            updated_at\n        )\n        VALUES ($1, false, false, false, false, false, NOW())\n        ",
+  "describe": {
+    "columns": [],
+    "parameters": {
+      "Left": [
+        "Uuid"
+      ]
+    },
+    "nullable": []
+  },
+  "hash": "cea4465bab68444a4cd27065feaaae74deed97391992613fc0f7b6ec353e234c"
+}

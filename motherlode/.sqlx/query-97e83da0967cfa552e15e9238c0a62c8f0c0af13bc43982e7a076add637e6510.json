@@ -1,0 +1,15 @@
+{
+  "db_name": "PostgreSQL",
+  "query": "\n        UPDATE users\n        SET pin_hash = $1, updated_at = NOW()\n        WHERE id = $2 AND is_active = true\n        ",
+  "describe": {
+    "columns": [],
+    "parameters": {
+      "Left": [
+        "Text",
+        "Uuid"
+      ]
+    },
+    "nullable": []
+  },
+  "hash": "97e83da0967cfa552e15e9238c0a62c8f0c0af13bc43982e7a076add637e6510"
+}

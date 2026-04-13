@@ -1,0 +1,15 @@
+{
+  "db_name": "PostgreSQL",
+  "query": "\n        UPDATE users\n        SET avatar_url = $1, updated_at = NOW()\n        WHERE id = $2 AND is_active = true\n        ",
+  "describe": {
+    "columns": [],
+    "parameters": {
+      "Left": [
+        "Text",
+        "Uuid"
+      ]
+    },
+    "nullable": []
+  },
+  "hash": "d165fe159c1e00844363c03112c07d9345f732e50c8887c7a6a446d310119509"
+}

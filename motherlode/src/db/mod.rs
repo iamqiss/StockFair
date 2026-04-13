@@ -1,4 +1,4 @@
-use sea_orm::{Database, DatabaseConnection};
+use sea_orm::{Database};
 use redis::{Client, aio::ConnectionManager};
 
 pub async fn connect(url: &str) -> anyhow::Result<sqlx::PgPool> {

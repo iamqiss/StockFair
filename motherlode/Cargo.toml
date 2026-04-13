@@ -15,7 +15,7 @@ hex = "0.4"
 
 # Database
 sea-orm = { version = "0.12", features = ["sqlx-postgres", "runtime-tokio-rustls", "macros"] }
-sqlx = { version = "0.7", features = ["runtime-tokio-rustls", "postgres", "uuid", "chrono", "migrate"] }
+sqlx = { version = "0.7", features = ["runtime-tokio-rustls", "postgres", "ipnetwork", "uuid", "chrono", "migrate"] }
 
 # Redis
 redis = { version = "0.25", features = ["tokio-comp", "connection-manager"] }

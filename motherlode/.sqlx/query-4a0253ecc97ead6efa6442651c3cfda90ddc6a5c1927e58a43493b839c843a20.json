@@ -1,0 +1,14 @@
+{
+  "db_name": "PostgreSQL",
+  "query": "\n        INSERT INTO fraud_settings (\n            user_id,\n            behavioral_analytics, sim_swap_detection,\n            jailbreak_detection, geofencing,\n            updated_at\n        )\n        VALUES ($1, false, false, false, false, NOW())\n        ",
+  "describe": {
+    "columns": [],
+    "parameters": {
+      "Left": [
+        "Uuid"
+      ]
+    },
+    "nullable": []
+  },
+  "hash": "4a0253ecc97ead6efa6442651c3cfda90ddc6a5c1927e58a43493b839c843a20"
+}

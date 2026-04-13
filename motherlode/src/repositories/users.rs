@@ -8,6 +8,7 @@
 
 use chrono::Utc;
 use sqlx::PgPool;
+use sqlx::types::ipnetwork::IpNetwork;
 use uuid::Uuid;
 use crate::errors::{AppError, AppResult};
 use crate::models::user::{CreateUserPayload, User};
@@ -453,10 +454,9 @@ pub async fn upsert_session(
     pool: &PgPool,
     user_id: Uuid,
     device_id: &str,
-    ip_address: Option<&str>,
+    ip_address: Option<IpNetwork>,
     user_agent: Option<&str>,
 ) -> AppResult<()> {
-    let ip_network = ip_address.and_then(|s| s.parse::<ipnetwork::IpNetwork>().ok());
     sqlx::query!(
         r#"
         INSERT INTO user_sessions (user_id, device_id, ip_address, user_agent, last_seen_at, created_at)
