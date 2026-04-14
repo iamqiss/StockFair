@@ -214,13 +214,13 @@ function Step1Personal({ data, set, errors, clearErr }: any) {
         <View style={{ flex: 1 }}>
           <InputField label="First Name" value={data.firstName}
             onChangeText={(v: string) => { set('firstName', v); clearErr('firstName'); }}
-            placeholder="e.g. Thandi" icon="user" error={errors.firstName}
+            placeholder="e.g. Neo" icon="user" error={errors.firstName}
             returnKeyType="next" onSubmitEditing={() => lastRef.current?.focus()} />
         </View>
         <View style={{ flex: 1 }}>
           <InputField label="Last Name" value={data.lastName}
             onChangeText={(v: string) => { set('lastName', v); clearErr('lastName'); }}
-            placeholder="e.g. Dlamini" icon="user" error={errors.lastName}
+            placeholder="e.g. Qiss" icon="user" error={errors.lastName}
             inputRef={lastRef} returnKeyType="done" />
         </View>
       </View>
