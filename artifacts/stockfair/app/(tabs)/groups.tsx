@@ -965,6 +965,8 @@ export default function GroupsScreen() {
         </View>
 
         {/* ── Discover Teaser ── */}
+        const router = useRouter();
+        
         <TouchableOpacity
           style={[gs.discoverBanner, { backgroundColor: colors.primary + '12', borderColor: colors.primary + '35' }]}
           onPress={() => { Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light); router.push('/(tabs)/discover'); }}
