@@ -1,0 +1,14 @@
+pub mod welcome;
+pub mod login;
+pub mod register;
+pub mod home;
+pub mod groups;
+pub mod discover;
+pub mod market;
+pub mod profile;
+pub mod fair_score;
+pub mod wallet;
+pub mod notifications;
+pub mod stokvel_detail;
+pub mod messages;
+pub mod portfolio;
