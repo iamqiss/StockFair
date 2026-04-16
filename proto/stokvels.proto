@@ -8,7 +8,7 @@ service StokvelService {
   rpc GetStokvel       (GetStokvelRequest)       returns (Stokvel);
   rpc ListMyStokvals   (ListMyStokvelRequest)    returns (StokvelList);
   rpc JoinStokvel      (JoinRequest)             returns (MembershipResponse);
-  rpc LeaveStokvel     (LeaveRequest)            returns (stockfair.common.CommonResponse);
+  rpc LeaveStokvel     (LeaveRequest)            returns (CommonResponse);
   rpc GetMembers       (GetMembersRequest)       returns (MemberList);
   rpc GetGroupPot      (GetStokvelRequest)       returns (GroupPot);
 
