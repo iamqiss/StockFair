@@ -1,183 +1,300 @@
-# StockFair
+<div align="center">
 
-> **The stokvel app built for the people who built the stokvel.**  
-> Transparent. Trustworthy. Proudly South African.
+<img src="docs/logo.png" alt="chipin logo" width="120" />
 
----
+# chipin
 
-## What is StockFair?
+**Community savings, reimagined for the world.**
 
-Stokvels move over **R50 billion** through South African communities every year — mostly through WhatsApp groups, handwritten books, and trust. Banks have only captured about R12 billion of that. The rest runs on faith alone.
+*Every culture has a name for it. Now there's one app.*
 
-StockFair is a digital-first stokvel management platform that brings transparency, accountability, and collective buying power to every group — without replacing the human trust that makes stokvels work in the first place.
+<br/>
 
-Built for the mamas. Built for the circles. Built for South Africa.
+[![Build](https://img.shields.io/github/actions/workflow/status/iamqiss/chipin/ci.yml?branch=main&style=flat-square&color=00C896&label=build)](https://github.com/iamqiss/chipin)
+[![Backend](https://img.shields.io/badge/motherlode-Rust%20%2B%20Axum-orange?style=flat-square&logo=rust)](https://github.com/iamqiss/chipin/tree/main/motherlode)
+[![Frontend](https://img.shields.io/badge/speedcrime-Blinc%20%2B%20GPU-blueviolet?style=flat-square)](https://github.com/iamqiss/chipin/tree/main/speedcrime)
+[![Protocol](https://img.shields.io/badge/transport-gRPC%20%2B%20Protobuf-4285F4?style=flat-square&logo=google)](https://github.com/iamqiss/chipin/tree/main/proto)
+[![License](https://img.shields.io/badge/license-MIT-00C896?style=flat-square)](LICENSE)
+[![Status](https://img.shields.io/badge/status-active%20development-yellow?style=flat-square)]()
+[![Made in](https://img.shields.io/badge/made%20in-Johannesburg%20🇿🇦-green?style=flat-square)]()
 
----
-
-## Features
-
-### Home Dashboard
-- Live total savings across all your stokvels
-- Balance, group count, and next payout at a glance
-- Quick-access Deposit & Withdraw
-- Stokvel cards with real-time contribution progress and overdue alerts
-
-### Groups
-- Manage multiple stokvels — Grocery, Rotating, Burial Society, Investment
-- Per-group progress bars showing collection towards payout
-- Member contribution tracking (Paid / Pending / Overdue)
-- Group Pot with target and payout date
-- Rules, History, and Group Cart tabs per stokvel
-
-### Market
-- Bulk grocery deals from Shoprite, Pick n Pay, Checkers, and Spar
-- Category filters: Staples, Oils, Canned Goods, Cleaning, and more
-- Pre-order with minimum quantity thresholds
-- Retailer discount badges on every product
-
-### Messages & Chat
-- Group chat per stokvel
-- Voice note support (critical for accessibility)
-- **Inline Pre-order Vote cards** — propose a bulk order, vote directly in chat
-  - Item breakdown, total cost, votes needed, live progress
-  - Vote Yes / No without leaving the conversation
-
-### Discover
-- Location-based stokvel discovery (Johannesburg, GP · 10km radius)
-- Featured stokvels with Fair Score ratings
-- Filter by: For You, Top Performers, Safest
-- Join or Request to Join open groups
-- Stokvel types: Rotation, Investment, Grocery Co-op
-
-### Fair Score
-- Transparent trustworthiness rating (300–850 range)
-- Calculated from: Payment History (40%), Consistency (25%), Group Activity (20%), Member Tenure (15%)
-- Score tiers: Building → Fair → Good → Very Good → Excellent
-- Tier unlocks: priority payouts, lower fees, investment stokvels, admin tools
-- Platform comparison — see how you rank among all StockFair members
-- Quick actions to boost your score
-
-### Investment Portfolio
-- Investment stokvels with Money Market Fund allocation
-- Performance timeline vs bank returns
-- Net returns, average rate p.a.
-- **SARS Tax Report** — estimated interest, tax-free exemption status
-- Full portfolio allocation donut chart
-
-### Wallet
-- Balance, money in/out summary
-- Send, Request, Deposit, Withdraw
-- Auto-Pay contributions setup
-- Transaction history filtered by: This Week / This Month / All Time
-- Category filters: All, Contributions, Payouts, Transfers
-
-### Notifications
-- Contribution due reminders
-- Payout processed alerts
-- New bulk deal alerts from retail partners
-- New member joins
-- Payment confirmations
-
-### Security
-**Feature Lock**
-- PIN protection per action: Withdraw Funds, Stokvel Payments, View Statements, Linked Accounts, Investment Actions
-
-**Fraud Shield** (all opt-in)
-- Behavioral Analytics — flags unusual activity patterns
-- SIM Swap Detection — monitors for SIM card porting (the #1 SA telecom fraud vector)
-- Jailbreak & Root Detection — protects against compromised devices
-- Geofencing & Velocity Checks — flags physically impossible transaction locations
-- Full data transparency on every feature
-
-### Language Support
-StockFair is built to meet members where they are — in their language.
-- **English** (default)
-- **Tsonga** (Xitsonga) — first-class support, culturally reviewed
-- **Sotho** (Sesotho)
-- **Zulu** (isiZulu)
-- More languages coming
-
-### Themes
-Three complete themes, each with light and dark modes:
-- **Obsidian** — monochrome, clean, minimal
-- **Forge** — amber gold, warm, community-rooted
-- **Bloom** — fuchsia, bold, expressive
+<br/>
 
 ---
 
-## Stokvel Constitution
+</div>
 
-Every group on StockFair is governed by a digitally-signed constitution — NASASA-aligned and built into the onboarding flow. Key provisions:
+## What is chipin?
 
-- FICA-compliant identity verification (SA ID / Passport + proof of residence)
-- Elected executive committee: Chairperson, Secretary, Treasurer
-- **Multi-Sig Rule**: Group fund withdrawals require approval from at least two office bearers
-- Late payment fines configurable per group
-- 30-day exit notice with clean balance settlement
-- Two-thirds majority required to expel a member
-- StockFair ledger is the canonical source of truth for all disputes
-- Available in all supported languages
+Around the world, communities have always pooled their money together. In South Africa it's a **stokvel**. In Mexico, a **tanda**. In India, a **chit fund**. In Egypt, a **gameya**. In West Africa, a **susu**. In China, a **hui**.
+
+The practice is ancient and universal — but the software has never caught up.
+
+**chipin** is the infrastructure that was always missing: a community savings platform where groups contribute together, idle funds earn yield through DeFi, payouts happen in local currency, and none of the financial complexity is visible to the user. It works the same way whether you're in Johannesburg, Mexico City, Mumbai, or Cairo.
 
 ---
 
-## Tech Stack
+## The Vision
 
-| Layer | Technology |
-|-------|-----------|
-| Mobile | React Native (Expo) |
-| Backend | Rust (Axum) |
-| Database | PostgreSQL |
-| Cache | Redis |
-| Payments | Ukheshe (with trait-based abstraction for future providers) |
-| Auth | FICA/CDD KYC pipeline |
+```
+User chips in  →  Pool earns DeFi yield  →  chipscore tracks behavior
+      ↓                                              ↓
+Local currency payout              Best scorers unlock real lending
+      ↓                                              ↓
+Seamless experience              Home finance. Car finance. Fair rates.
+```
 
----
-
-## Why StockFair?
-
-| Problem | StockFair Solution |
-|---------|-------------------|
-| Money disappears, no accountability | Real-time ledger visible to all members |
-| Admins have unchecked power | Multi-sig withdrawals, transparent Fair Score |
-| No proof of contribution history | Immutable transaction records |
-| Bulk buying is manual and disorganized | Market tab with retailer partnerships and group cart |
-| Language barriers lock people out | Native support for Tsonga, Sotho, Zulu |
-| SIM swap fraud wipes savings | Built-in Fraud Shield with SIM Swap Detection |
-| No way to grow stokvel money | Investment stokvels with Money Market Funds and SARS reporting |
+chipin is building toward a commercial banking license — not to become another bank, but to give people who traditional banks have always ignored a genuine path to credit. **chipscore** doesn't care how much you earn. It cares how consistent you are.
 
 ---
 
-## Market Opportunity
+## The Stack
 
-- **800,000+** active stokvel groups in South Africa
-- **R50 billion+** total annual stokvel economy
-- **~R38 billion** currently unserved by any digital platform
-- Majority of members are women in LSM 4–7
-- Grocery stokvels are the largest and fastest-growing segment
+chipin is built entirely in Rust — not as a philosophical choice, but because real-time financial systems demand it.
 
----
-
-## Roadmap
-
-- [ ] Live payment integration (Ukheshe)
-- [ ] Full multi-language rollout (Tsonga, Sotho, Zulu)
-- [ ] Shoprite / Pick n Pay / Checkers API partnerships
-- [ ] Investment stokvel regulatory compliance (FSP licensing)
-- [ ] Biometric authentication
-- [ ] WhatsApp-based contribution reminders
+| Layer | Technology | Purpose |
+|---|---|---|
+| **motherlode** | Rust · Axum · tonic | Backend API + gRPC server |
+| **speedcrime** | Rust · Blinc · wgpu | GPU-accelerated native frontend |
+| **transport** | gRPC + Protobuf | Type-safe binary communication |
+| **database** | PostgreSQL · Supabase | Persistent storage |
+| **cache** | Redis · Upstash | OTP, sessions, rate limiting |
+| **payments** | Ukheshe → Internal FSP | Payment provider (swappable) |
+| **DeFi** | USDC · Yield protocol | Parent currency + pool yield |
+| **mobile** | Android · iOS · WASM | Cross-platform via Blinc |
 
 ---
 
-## Contact
+## Feature Status
 
-- 📧 support@stockfair.co.za  
-- 💬 WhatsApp: 0860 STOCKFAIR  
+### Core
+
+| Feature | Status |
+|---|---|
+| Multi-step registration + FICA compliance | ✅ Complete |
+| Phone OTP via SMS + WhatsApp | ✅ Complete |
+| JWT auth with token rotation | ✅ Complete |
+| Fraud Shield (SIM swap, geofencing, behavioral) | ✅ Designed |
+| Feature lock (PIN-gated actions) | ✅ Designed |
+| gRPC + Protobuf transport layer | ✅ Scaffolded |
+| Database migrations (10 tables) | ✅ Live on Supabase |
+
+### Groups & Contributions
+
+| Feature | Status |
+|---|---|
+| Create / join groups | 🔨 In progress |
+| Member roles (Chairperson, Secretary, Treasurer) | 🔨 In progress |
+| Multi-sig withdrawals (2-of-N approval) | 🔨 In progress |
+| Real-time contribution tracking | 🔨 In progress |
+| Auto-pay contributions | 📋 Planned |
+| Payout scheduler | 📋 Planned |
+
+### Market (Bulk Buying)
+
+| Feature | Status |
+|---|---|
+| Retailer partnerships (Shoprite, Pick n Pay, Checkers) | 📋 Planned |
+| Group pre-order with in-chat voting | 📋 Planned |
+| Collection codes for grocery pickup | 📋 Planned |
+| Bulk deal notifications | 📋 Planned |
+
+### chipscore
+
+| Feature | Status |
+|---|---|
+| Score algorithm (behavior + consistency) | 🔨 In progress |
+| Score history + breakdown | 🔨 In progress |
+| Tier unlocks (Building → Fair → Good → Very Good → Excellent) | 📋 Planned |
+| Platform comparison | 📋 Planned |
+| Credit unlock via chipscore | 🔭 Future (post-FSP license) |
+
+### DeFi & Global Expansion
+
+| Feature | Status |
+|---|---|
+| USDC as internal settlement currency | 🔭 Future |
+| DeFi yield on pool funds | 🔭 Future |
+| Multi-currency local payout | 🔭 Future |
+| Cross-border groups | 🔭 Future |
+| FSP / Commercial banking license | 🔭 Future |
 
 ---
 
-> *StockFair does not sell or share your data with third parties. All fraud detection features are opt-in. Investment returns are estimates based on historical averages. Past performance does not guarantee future results. Not financial advice.*
+## Languages
+
+chipin is built to meet users in their language — not as an afterthought.
+
+| Language | Status |
+|---|---|
+| English | ✅ Complete |
+| Xitsonga | ✅ Culturally reviewed (first-class) |
+| Sesotho | 🔨 In progress |
+| isiZulu | 🔨 In progress |
+| isiXhosa | 📋 Planned |
+| Afrikaans | 📋 Planned |
+| Setswana | 📋 Planned |
+| siSwati · Tshivenda · Sepedi · isiNdebele | 📋 Planned |
+| Spanish · Hindi · Arabic | 🔭 Future (global expansion) |
+
+> **Why Xitsonga first?** chipin was born in Giyani, Limpopo. Xitsonga is underrepresented in SA tech. Leading with it is a cultural statement — and it's the language of our first users.
 
 ---
 
-Built with 💛 in Johannesburg, South Africa.
+## Architecture
+
+```
+┌─────────────────────────────────────────────────────────────┐
+│                        speedcrime                           │
+│              Blinc · GPU-accelerated · cross-platform       │
+│          Android  ·  iOS  ·  Desktop  ·  WASM               │
+└──────────────────────┬──────────────────────────────────────┘
+                       │
+              gRPC :50051 (native)
+              gRPC-Web :50052 (WASM)
+              Protobuf binary
+                       │
+┌──────────────────────▼──────────────────────────────────────┐
+│                        motherlode                           │
+│            Rust · Axum · tonic · sqlx · Redis               │
+├───────────────┬───────────────┬────────────────────────────┤
+│  Auth + OTP   │ Groups + Wallet│ Market + DeFi             │
+│  chipscore    │ Contributions  │ Fraud Shield               │
+└───────────────┴───────┬───────┴────────────────────────────┘
+                        │
+         ┌──────────────┼──────────────┐
+         ▼              ▼              ▼
+    PostgreSQL        Redis        Payment
+    (Supabase)      (Upstash)     Provider
+                                 (Ukheshe →
+                                  Internal FSP)
+```
+
+---
+
+## The chipscore Manifesto
+
+Traditional credit scoring is broken. It rewards people who already have money and punishes those who don't.
+
+**chipscore works differently:**
+
+- It measures **consistency**, not wealth
+- It tracks **behavior** over time — minimum 12 months to build a meaningful score
+- It rewards **showing up** for your circle, every month, without fail
+- It never rewards taking on debt you don't need
+- It starts at **380 for everyone** — no head start for the wealthy
+
+When chipin eventually offers home and car finance, the best rates go to the most consistent people — regardless of their salary.
+
+---
+
+## Why Rust?
+
+chipin handles real money in real-time across groups of people who trust each other. There is no room for runtime errors, memory unsafety, or race conditions.
+
+- **motherlode** — every database query is compile-time verified via sqlx macros
+- **speedcrime** — GPU-rendered UI with zero garbage collection pauses
+- **gRPC + Protobuf** — mathematical impossibility of type mismatches at the transport layer
+- **Payment abstraction** — swappable via a Rust trait, one env var to switch providers
+
+The most catastrophic category of fintech failures — bad data types, null pointer exceptions, race conditions in concurrent transactions — cannot compile in chipin.
+
+---
+
+## Getting Started
+
+```bash
+# Prerequisites
+cargo install sqlx-cli --no-default-features --features postgres
+sudo apt install -y protobuf-compiler
+
+# Clone
+git clone https://github.com/iamqiss/chipin
+cd chipin
+
+# Backend (motherlode)
+cd motherlode
+cp .env.example .env     # fill in Supabase + Redis URLs
+sqlx migrate run
+cargo run
+
+# Frontend (speedcrime)
+cd ../speedcrime
+cp .env.example .env     # set MOTHERLODE_GRPC_URL
+cargo run
+```
+
+---
+
+## Repository Structure
+
+```
+chipin/
+├── proto/               # Protobuf definitions (source of truth)
+│   ├── common.proto
+│   ├── auth.proto
+│   ├── stokvels.proto
+│   ├── wallet.proto
+│   ├── market.proto
+│   ├── fair_score.proto
+│   ├── messages.proto
+│   └── fraud.proto
+│
+├── motherlode/          # Rust backend
+│   ├── src/
+│   │   ├── routes/      # HTTP + gRPC routing
+│   │   ├── handlers/    # Request / response
+│   │   ├── services/    # Business logic
+│   │   ├── repositories/# Database queries
+│   │   ├── grpc/        # tonic gRPC server
+│   │   ├── payments/    # Provider abstraction
+│   │   ├── notifications/# SMS, WhatsApp, FCM
+│   │   └── jobs/        # Background tasks
+│   └── migrations/      # 10 SQL migrations (live)
+│
+├── speedcrime/          # Rust native frontend
+│   ├── src/
+│   │   ├── app/         # Screens
+│   │   ├── components/  # UI components
+│   │   ├── grpc/        # tonic client
+│   │   ├── i18n/        # 11 SA languages
+│   │   ├── state/       # App + auth state
+│   │   └── theme/       # Obsidian · Forge · Bloom
+│   └── assets/          # Fonts, icons, images
+│
+└── docs/                # Logo, screenshots, architecture
+```
+
+---
+
+## Status Legend
+
+| Badge | Meaning |
+|---|---|
+| ✅ Complete | Built, tested, working |
+| 🔨 In progress | Actively being built |
+| 📋 Planned | Designed, not yet built |
+| 🔭 Future | Post-launch roadmap |
+
+---
+
+<div align="center">
+
+**chipin** is being built by a 22-year-old self-taught developer from Giyani, Limpopo.
+
+<br/>
+
+*For the mamas who run stokvels in WhatsApp groups.*
+*For the circles that keep families fed.*
+*For everyone the banks said no to.*
+
+<br/>
+
+---
+
+Built with 💚 in Johannesburg, South Africa
+
+[support@chipin.app](mailto:support@chipin.app) · [chipin.app](https://chipin.app)
+
+</div>
+ 
