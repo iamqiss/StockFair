@@ -2,8 +2,6 @@
 
 <img src="logo.png" alt="chipin logo" height=150/>
 
-# chipin
-
 **Community savings, reimagined for the world.**
 
 *Every culture has a name for it. Now there's one app.*
